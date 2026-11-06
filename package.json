@@ -1,0 +1,37 @@
+{
+	"name": "cyber-jira-monorepo",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"build": "turbo run build",
+		"cj": "pnpm run --filter=./packages/cyber-jira",
+		"check": "biome check",
+		"check:fix": "biome check --write",
+		"knip": "knip",
+		"plugin:build": "universal-plugin plugin build --root packages/cyber-jira && biome check --write packages/cyber-jira/plugin.json packages/cyber-jira/.claude-plugin packages/cyber-jira/.cursor-plugin packages/cyber-jira/.codex-plugin",
+		"plugin:check": "node scripts/check-plugin-build.mjs",
+		"plugin:validate": "universal-plugin plugin validate --root packages/cyber-jira",
+		"prepare": "husky",
+		"release": "changeset publish",
+		"test": "turbo run test",
+		"typecheck": "turbo run typecheck",
+		"verify": "pnpm check && pnpm plugin:check && pnpm plugin:validate && turbo run build typecheck test && pnpm knip",
+		"version": "changeset version && universal-plugin publish sync-version --root packages/cyber-jira && pnpm plugin:build",
+		"web": "turbo run --filter=@cyber-uni/cyber-jira-web"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^2.5.15",
+		"@changesets/cli": "^3.0.3",
+		"@commitlint/cli": "^21.2.3",
+		"@commitlint/config-conventional": "^21.2.3",
+		"@repobuddy/biome": "^2.5.1",
+		"husky": "^9.1.7",
+		"knip": "^6.40.0",
+		"turbo": "^2.11.7",
+		"universal-plugin": "^0.16.3"
+	},
+	"packageManager": "pnpm@12.17.0+sha512.b8d223ebec04b580a89ed206daa71d1bccb6a1ee1d52efa95cc3b0db75271561df8f0d8e2c43add39c5ec08018af7a8a95108e7090f95a29f88727b7a40fd53d",
+	"engines": {
+		"node": ">=22"
+	}
+}

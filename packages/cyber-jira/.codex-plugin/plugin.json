@@ -1,0 +1,17 @@
+{
+	"name": "cyber-jira",
+	"version": "0.1.0",
+	"description": "Agent skills for Jira, driving the jira CLI",
+	"author": {
+		"name": "unional"
+	},
+	"homepage": "https://cyber-uni.github.io/cyber-jira/",
+	"repository": "https://github.com/cyber-uni/cyber-jira.git",
+	"license": "MIT",
+	"keywords": ["jira", "cli", "agent", "productivity", "project-management"],
+	"skills": "./skills/",
+	"interface": {
+		"displayName": "Cyber Jira",
+		"category": "productivity"
+	}
+}

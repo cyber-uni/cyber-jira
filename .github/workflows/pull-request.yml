@@ -1,0 +1,23 @@
+name: pull-request
+on:
+  pull_request:
+    types: [opened, synchronize]
+  # The merge queue fires neither `pull_request` nor `push`; without this trigger a queued
+  # PR waits forever on checks that never start.
+  merge_group:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+permissions: {}
+
+jobs:
+  code:
+    uses: cyber-uni/.github/.github/workflows/pnpm-verify.yml@v1
+    permissions:
+      contents: read
+      id-token: write
+    with:
+      os: '["ubuntu-latest"]'
+      playwright-browsers: ""

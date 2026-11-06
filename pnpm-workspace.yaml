@@ -1,0 +1,16 @@
+packages:
+  - "apps/*"
+  - "packages/*"
+allowBuilds:
+  esbuild: true
+  sharp: true
+onlyBuiltDependencies:
+  - "@biomejs/biome"
+  - esbuild
+  - sharp
+
+# Supply-chain soak: no dependency may be installed until it has been on the registry
+# for 24h. It must live here; in `.npmrc` the key is not read. `minimumReleaseAgeStrict`
+# makes a too-young package an error instead of a silent exclusion.
+minimumReleaseAge: 1440 # 1 day
+minimumReleaseAgeStrict: true

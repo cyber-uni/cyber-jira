@@ -1,0 +1,26 @@
+name: release
+on:
+  push:
+    branches: [main]
+
+permissions: {}
+
+jobs:
+  code:
+    uses: cyber-uni/.github/.github/workflows/pnpm-verify.yml@v1
+    permissions:
+      contents: read
+      id-token: write
+    with:
+      os: '["ubuntu-latest"]'
+      playwright-browsers: ""
+
+  # Secretless: GITHUB_TOKEN for the version PR, npm trusted publishing (OIDC) to publish.
+  # The trusted publisher registered at npmjs.com names this file, release.yml. Keep the filename.
+  release:
+    needs: code
+    uses: cyber-uni/.github/.github/workflows/pnpm-release.yml@v1
+    permissions:
+      contents: write
+      pull-requests: write
+      id-token: write
