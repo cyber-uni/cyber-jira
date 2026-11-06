@@ -3,6 +3,8 @@
 Agent skills for Jira. They drive the [`jira` CLI](https://github.com/ankitpokhrel/jira-cli) by
 ankitpokhrel, so the plugin ships no CLI, API client, or MCP server of its own.
 
+Documentation: <https://cyber-uni.github.io/cyber-jira/>
+
 | Skill | What it does |
 | --- | --- |
 | `jira` | The entry point. Routes the request, resolves the project and people from the repo config, and runs `jira` commands without opening the CLI's interactive UI |
@@ -71,6 +73,8 @@ manifests:
 ```bash
 pnpm plugin:build
 ```
+
+The docs site is in `apps/web`. Run `pnpm web dev` to preview it.
 
 ## License
 

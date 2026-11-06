@@ -6,7 +6,7 @@
 		},
 		"apps/web": {
 			"entry": ["src/**/*.{astro,ts,mdx}"],
-			"project": ["src/**/*.{astro,ts,mdx}"]
+			"project": ["src/**/*.{astro,ts,mdx,css}"]
 		}
 	}
 }

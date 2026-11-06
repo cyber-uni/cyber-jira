@@ -1,0 +1,52 @@
+---
+title: cyber-jira
+description: Agent skills for Jira, built on the jira CLI.
+template: splash
+hero:
+  tagline: Agent skills for Jira. They drive the jira CLI, so there is no extra server or API client to run.
+  actions:
+    - text: Getting Started
+      link: /cyber-jira/getting-started/
+      icon: right-arrow
+    - text: Skills
+      link: /cyber-jira/skills/jira/
+      icon: right-arrow
+      variant: secondary
+    - text: GitHub
+      link: https://github.com/cyber-uni/cyber-jira
+      icon: external
+      variant: minimal
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+cyber-jira is a plugin for Claude Code, Codex, and GitHub Copilot CLI. Its skills run the
+[`jira` CLI](https://github.com/ankitpokhrel/jira-cli) by ankitpokhrel. The plugin ships no CLI,
+API client, or MCP server of its own.
+
+## Skills
+
+<CardGrid>
+  <Card title="jira" icon="pencil">
+    The entry point. Finds, creates, edits, moves, assigns, and comments on issues, epics, and sprints.
+    [Read more](/cyber-jira/skills/jira/)
+  </Card>
+  <Card title="init-jira" icon="rocket">
+    Installs the CLI, guides you through the API token, runs `jira init`, and checks the connection.
+    [Read more](/cyber-jira/skills/init-jira/)
+  </Card>
+  <Card title="config-jira" icon="setting">
+    Keeps the repo's projects, user aliases, and issue defaults in `.agents/cyber-jira.json`.
+    [Read more](/cyber-jira/skills/config-jira/)
+  </Card>
+</CardGrid>
+
+## Install
+
+```text
+/plugin marketplace add cyber-uni/marketplace
+/plugin install cyber-jira@cyber-uni
+```
+
+That is the Claude Code form. [Getting started](/cyber-jira/getting-started/) has Codex and Copilot
+CLI too.

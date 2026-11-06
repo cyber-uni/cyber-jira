@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="cyber-jira">
+  <path class="s" d="M17 63V17h46"/>
+  <path class="s" d="M111 65v46H65"/>
+  <g class="f"><rect x="32" y="34" width="12" height="12" rx="3"/><rect x="52" y="34" width="44" height="12" rx="3"/><rect x="32" y="58" width="12" height="12" rx="3"/><rect x="52" y="58" width="44" height="12" rx="3"/><rect x="32" y="82" width="12" height="12" rx="3"/><rect x="52" y="82" width="44" height="12" rx="3"/></g>
+  <style>.f{fill:#000}.s{fill:none;stroke:#000;stroke-width:10;stroke-linecap:round;stroke-linejoin:round}@media (prefers-color-scheme:dark){.f{fill:#fff}.s{stroke:#fff}}</style>
+</svg>
